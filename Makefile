@@ -1,5 +1,7 @@
 PROJECT_NAME=spark-practice
 PYTHON := python3
+SPARK_MASTER_URL=spark://spark-master:7077
+WORKERS := $(if $(filter-out run,$(MAKECMDGOALS)),$(filter-out run,$(MAKECMDGOALS)),3)
 
 .PHONY: install run stop
 
@@ -12,8 +14,11 @@ install:
 	fi
 
 run:
-	docker compose up -d
-	docker compose exec spark spark-submit /app/main.py
+	docker compose up -d --scale spark-worker=$(WORKERS)
+	docker compose exec spark-master spark-submit --master $(SPARK_MASTER_URL) /app/main.py
 
 stop:
 	docker compose down
+
+%:
+	@:
