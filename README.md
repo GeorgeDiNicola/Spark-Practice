@@ -9,7 +9,7 @@ make stop
 ```
 
 # Dataset Source
-[Kaggle Flight Delay Dataset](https://www.kaggle.com/datasets/robikscube/flight-delay-dataset-20182022)
+29 million rows of flight data from 2018 to 2022, including details such as departure and arrival times, delays, cancellations, and diversions. The dataset is sourced from the [Kaggle Flight Delay Dataset](https://www.kaggle.com/datasets/robikscube/flight-delay-dataset-20182022)
 
 # Flight Summaries Years 2018-2022 Output
 | Airline | Total Flights | Cancelled Flights | Diverted Flights | Avg Departure Delay (min) | Avg Arrival Delay (min) | Total Departure Delay (min) | Total Arrival Delay (min) | Avg Distance | Cancellation Rate | Diversion Rate |
