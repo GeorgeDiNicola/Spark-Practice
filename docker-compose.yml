@@ -1,0 +1,15 @@
+services:
+  spark:
+    image: apache/spark:4.0.1
+    container_name: spark-practice
+    environment:
+      - PATH=/opt/spark/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - SPARK_MODE=master
+    volumes:
+      - ./data:/data
+      - ./app:/app
+      - ./output:/output
+    working_dir: /app
+    ports:
+      - "4040:4040"
+    command: sleep infinity
